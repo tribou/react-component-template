@@ -1,16 +1,28 @@
+/* @flow */
+
+
 import React from 'react';
 import Component from '..';
 
 
-const App = React.createClass({
+
+const App:ReactElement<any, any, any> = React.createClass({
   render() {
     return (
       <div>
-        <Component />
+        <Component name={name} />
       </div>
     );
   }
 });
 
 
+//
+//const App = ({name} : PropTypes) => (
+//  <div>
+//    <Component name={name} />
+//  </div>
+//);
+//
+//
 export default App;

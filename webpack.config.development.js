@@ -9,6 +9,10 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 
 
+// Polyfill ES6 for Node 0.10 (e.g. Symbol, Promise)
+require('babel-polyfill');
+
+
 module.exports = {
   devtool: 'eval',
 
@@ -29,6 +33,7 @@ module.exports = {
   ],
   module: {
     loaders: [
+      {test: /\.json$/, loader: 'json'},
       {test: /\.js$/, loaders: ['react-hot', 'babel'], include: [path.resolve('src')]}
     ],
     preLoaders: [

@@ -8,6 +8,10 @@ var webpack = require('webpack');
 var path = require('path');
 
 
+// Polyfill ES6 for Node 0.10 (e.g. Symbol, Promise)
+require('babel-polyfill');
+
+
 module.exports = {
   devtool: 'source-map',
   entry: './src/index.js',
